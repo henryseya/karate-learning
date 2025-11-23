@@ -26,7 +26,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 });
 </script>
 
-    <title>features.ejemplo</title>
+    <title>features.01-jsonplaceholder-get</title>
   </head>
   <body>
     <div id="root-container">
@@ -49,13 +49,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2025-11-23 12:40:28 p. m.</div>
+    <div>2025-11-23 12:40:27 p. m.</div>
   </div>
 </div>
 
         <div class="nav-container">
           <div class="nav-item passed">
-            <a href="#[1:3]"><span>[1:3]</span> <span>Validar respuesta simple</span></a>
+            <a href="#[1:6]"><span>[1:6]</span> <span>Validar un GET simple</span></a>
           </div>
         </div>
       </div>
@@ -64,38 +64,72 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
           <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
           <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
           <span class="feature-label">Feature:</span>
-          <span class="feature-path">features/ejemplo.feature</span><span class="feature-label">|</span>
-          <span class="feature-name">Prueba básica en Karate</span>
+          <span class="feature-path">features/01-jsonplaceholder-get.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">Prueba básica con API REST (JSONPlaceholder)</span>
           <span class="feature-description"></span>
         </div>
         <div class="scenario">
-          <div class="scenario-heading" id="[1:3]">
+          <div class="scenario-heading" id="[1:6]">
             <div class="heading-container">
               <div class="scenario-tags">
                 
               </div>
               <div class="scenario-keyword">
-                Scenario: <span>[1:3]</span>
-                <span class="scenario-name">Validar respuesta simple</span>
+                Scenario: <span>[1:6]</span>
+                <span class="scenario-name">Validar un GET simple</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>69</span>
+              <span>ms:</span>&nbsp;<span>2939</span>
             </div>
           </div>
-          
-          <div><div>
+          <div class="step-row">
+            <div class="step-container" id="[1:6]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1:6]bg"><div>
   
 
   
 
   <div class="step-row">
     <div class="step-container" id="0.4">
-      <div class="step-ref passed">4</div>
+      <div class="step-ref bg-step">4</div>
       
       <div class="step-cell passed">
-        <span>Given</span>&nbsp;<span>url &#39;https://jsonplaceholder.typicode.com/posts/1&#39;</span>
+        <span>*</span>&nbsp;<span>url &#39;https://jsonplaceholder.typicode.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">179</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.7">
+      <div class="step-ref passed">7</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;posts/1&#39;</span>
       </div>
     </div>
     <div class="time-cell passed">1</div>
@@ -119,14 +153,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.5">
-      <div class="step-ref passed">5</div>
+    <div class="step-container" id="0.8">
+      <div class="step-ref passed">8</div>
       
       <div class="step-cell passed">
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">65</div>
+    <div class="time-cell passed">2624</div>
   </div>
 
    
@@ -135,7 +169,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.5">12:40:28.377 request:
+  <div class="preformatted" data-parent="0.8">12:40:26.444 request:
 1 &gt; GET https://jsonplaceholder.typicode.com/posts/1
 1 &gt; Host: jsonplaceholder.typicode.com
 1 &gt; Connection: Keep-Alive
@@ -143,9 +177,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-12:40:28.429 response time in milliseconds: 52
+12:40:26.796 response time in milliseconds: 337
 1 &lt; 200
-1 &lt; Date: Sun, 23 Nov 2025 11:40:28 GMT
+1 &lt; Date: Sun, 23 Nov 2025 11:40:26 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
@@ -155,8 +189,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; expires: -1
 1 &lt; nel: {&quot;report_to&quot;:&quot;heroku-nel&quot;,&quot;response_headers&quot;:[&quot;Via&quot;],&quot;max_age&quot;:3600,&quot;success_fraction&quot;:0.01,&quot;failure_fraction&quot;:0.1}
 1 &lt; pragma: no-cache
-1 &lt; report-to: {&quot;group&quot;:&quot;heroku-nel&quot;,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://nel.heroku.com/reports?s=WKEEfsluBhZk%2F8OEs2JpAIMJtINcuGA5J1rNve3mxCM%3D\u0026sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d\u0026ts=1763692651&quot;}],&quot;max_age&quot;:3600}
-1 &lt; reporting-endpoints: heroku-nel=&quot;https://nel.heroku.com/reports?s=WKEEfsluBhZk%2F8OEs2JpAIMJtINcuGA5J1rNve3mxCM%3D&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;ts=1763692651&quot;
+1 &lt; report-to: {&quot;group&quot;:&quot;heroku-nel&quot;,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://nel.heroku.com/reports?s=iF7Dg%2BJuoQqR7G%2BEgrEJYlmmyowe6b5bXcOEisat6iY%3D\u0026sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d\u0026ts=1763725558&quot;}],&quot;max_age&quot;:3600}
+1 &lt; reporting-endpoints: heroku-nel=&quot;https://nel.heroku.com/reports?s=iF7Dg%2BJuoQqR7G%2BEgrEJYlmmyowe6b5bXcOEisat6iY%3D&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;ts=1763725558&quot;
 1 &lt; Server: cloudflare
 1 &lt; vary: Origin, Accept-Encoding
 1 &lt; via: 2.0 heroku-router
@@ -164,12 +198,12 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; x-powered-by: Express
 1 &lt; x-ratelimit-limit: 1000
 1 &lt; x-ratelimit-remaining: 999
-1 &lt; x-ratelimit-reset: 1763692706
-1 &lt; Age: 3724
+1 &lt; x-ratelimit-reset: 1763725586
+1 &lt; Age: 28461
 1 &lt; Server-Timing: cfCacheStatus;desc=&quot;HIT&quot;
-1 &lt; Server-Timing: cfEdge;dur=3,cfOrigin;dur=0
+1 &lt; Server-Timing: cfEdge;dur=2,cfOrigin;dur=0
 1 &lt; cf-cache-status: HIT
-1 &lt; CF-RAY: 9a3064531cc403c9-MAD
+1 &lt; CF-RAY: 9a306448af8b80ee-MAD
 1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
 {
   &quot;userId&quot;: 1,
@@ -190,8 +224,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.6">
-      <div class="step-ref passed">6</div>
+    <div class="step-container" id="0.9">
+      <div class="step-ref passed">9</div>
       
       <div class="step-cell passed">
         <span>Then</span>&nbsp;<span>status 200</span>
@@ -218,8 +252,36 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.7">
-      <div class="step-ref passed">7</div>
+    <div class="step-container" id="0.10">
+      <div class="step-ref passed">10</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.id == 1</span>
+      </div>
+    </div>
+    <div class="time-cell passed">133</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.11">
+      <div class="step-ref passed">11</div>
       
       <div class="step-cell passed">
         <span>And</span>&nbsp;<span>match response.title == &#39;#string&#39;</span>
