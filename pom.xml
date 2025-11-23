@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- Versión del modelo POM -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Identificación del proyecto -->
+    <groupId>org.example</groupId>        <!-- Grupo base del proyecto -->
+    <artifactId>TestingJava</artifactId>  <!-- Nombre del artefacto -->
+    <version>1.0-SNAPSHOT</version>       <!-- Versión del proyecto -->
+
+    <!-- PROPIEDADES DEL PROYECTO -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> <!-- Codificación -->
+        <java.version>11</java.version>                                     <!-- Versión de Java -->
+        <maven.compiler.version>3.11.0</maven.compiler.version>            <!-- Plugin compilador -->
+        <maven.surefire.version>3.0.0</maven.surefire.version>             <!-- Plugin para pruebas -->
+        <karate.version>1.4.1</karate.version>                             <!-- Versión de Karate -->
+        <maven.compiler.target>11</maven.compiler.target>                  <!-- Target Java -->
+        <maven.compiler.source>11</maven.compiler.source>                  <!-- Source Java -->
+        <maven.build.timestamp>${maven.build.timestamp}</maven.build.timestamp>
+    </properties>
+
+    <!-- DEPENDENCIAS DEL PROYECTO -->
+    <dependencies>
+        <!-- Selenium (opcional, para pruebas UI) -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.33.0</version>
+        </dependency>
+
+        <!-- Karate con JUnit5 -->
+        <dependency>
+            <groupId>com.intuit.karate</groupId>
+            <artifactId>karate-junit5</artifactId>
+            <version>${karate.version}</version>
+        </dependency>
+
+        <!-- Núcleo de Karate -->
+        <dependency>
+            <groupId>com.intuit.karate</groupId>
+            <artifactId>karate-core</artifactId>
+            <version>${karate.version}</version>
+        </dependency>
+
+        <!-- Servidor de depuración para Karate -->
+        <dependency>
+            <groupId>io.karatelabs</groupId>
+            <artifactId>karate-debugserver</artifactId>
+            <version>0.1.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Reportes Cucumber -->
+        <dependency>
+            <groupId>net.masterthought</groupId>
+            <artifactId>cucumber-reporting</artifactId>
+            <version>5.7.5</version>
+        </dependency>
+    </dependencies>
+
+    <!-- CONFIGURACIÓN DE BUILD -->
+    <build>
+        <!-- Excluir archivos .java de recursos de prueba -->
+        <testResources>
+            <testResource>
+                <directory>src/test/java</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </testResource>
+        </testResources>
+
+        <!-- Plugins Maven -->
+        <plugins>
+            <!-- Plugin para compilar código Java -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.version}</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+
+            <!-- Plugin para ejecutar pruebas -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven.surefire.version}</version>
+                <configuration>
+                    <argLine>-Dfile.encoding=UTF-8</argLine>
+                    <systemPropertyVariables>
+                        <current.date>${maven.build.timestamp}</current.date>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
